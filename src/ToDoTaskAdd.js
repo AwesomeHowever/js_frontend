@@ -1,6 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-class ToDoTaskAdd extends React.Component {
+class ToDoTaskAddInner extends React.Component {
   constructor(props) { 
     super(props) 
 
@@ -47,6 +48,7 @@ class ToDoTaskAdd extends React.Component {
              }).then((data) => {
         console.log(data);
 		this.props.onTaskAdd(data);
+		this.props.history('/');
       });
   }
   
@@ -57,6 +59,13 @@ class ToDoTaskAdd extends React.Component {
               <input type="submit" value="Add" />
           </form>)
   }
+}
+
+const ToDoTaskAdd = (props) => {
+	return (
+	  <ToDoTaskAddInner {...props} history={useNavigate()} />
+	)
+	
 }
 
 export default ToDoTaskAdd;
