@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { connect } from 'redact-redux';
 import { NavLink } from 'react-router-dom';
-import { todoAdd } from './actions';
+import { todoAdd } from './actions'
 
 class ToDoTaskAddInner extends React.Component {
   constructor(props) { 
@@ -93,4 +94,4 @@ const ToDoTaskAdd = (props) => {
 	
 }
 
-export default ToDoTaskAdd;
+export default connect() (ToDoTaskAdd);
