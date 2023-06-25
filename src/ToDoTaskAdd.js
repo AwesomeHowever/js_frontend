@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { connect } from 'redact-redux';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { todoAdd } from './actions'
 
